@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>易倍体育 · 稳定入口与页面说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f4f6f9;
+            color: #1e2a3a;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1120px;
+            width: 100%;
+            padding: 0 24px;
+        }
+
+        /* ===== Hero 深色 ===== */
+        .hero {
+            background: linear-gradient(145deg, #0c1a2b 0%, #1a2e44 100%);
+            color: #eef3f8;
+            padding: 72px 0 56px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero .container {
+            max-width: 820px;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 550;
+            letter-spacing: 0.01em;
+            margin-bottom: 18px;
+        }
+
+        .hero .sub {
+            font-size: 1.2rem;
+            color: #b8ccdd;
+            max-width: 660px;
+            margin: 0 auto 28px;
+            line-height: 1.7;
+        }
+
+        .hero .meta-line {
+            font-size: 0.9rem;
+            color: #8ba3bb;
+            border-top: 1px solid #2c405a;
+            padding-top: 24px;
+            margin-top: 30px;
+            display: inline-block;
+        }
+
+        /* ===== 浅色正文区 ===== */
+        .content {
+            padding: 56px 0 40px;
+            background: #ffffff;
+            width: 100%;
+        }
+
+        .content h2 {
+            font-size: 1.7rem;
+            font-weight: 500;
+            margin: 40px 0 16px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #e2e8f0;
+            color: #0f1e2f;
+        }
+
+        .content h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #1f2c3e;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+            margin: 28px 0 20px;
+        }
+
+        .card-item {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 28px 22px;
+            border: 1px solid #e9edf3;
+            transition: box-shadow 0.2s, transform 0.15s;
+        }
+
+        .card-item:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+            transform: translateY(-2px);
+        }
+
+        .card-item .num {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: #2163a0;
+            display: block;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .card-item h3 {
+            font-size: 1.2rem;
+            font-weight: 550;
+            margin-bottom: 8px;
+            color: #142433;
+        }
+
+        .card-item p {
+            font-size: 0.95rem;
+            color: #2f4055;
+            margin-bottom: 0;
+        }
+
+        .faq-preview {
+            background: #f1f5fa;
+            border-left: 4px solid #1f5a93;
+            padding: 28px 28px 24px;
+            border-radius: 12px;
+            margin: 40px 0 30px;
+        }
+
+        .faq-preview h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 18px;
+            color: #0c1d31;
+        }
+
+        .faq-item {
+            margin-bottom: 14px;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 550;
+            color: #193c5e;
+            margin-bottom: 2px;
+        }
+
+        .faq-item p {
+            margin: 0 0 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: #1f6eb0;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        a:hover {
+            color: #0c3f6e;
+            border-bottom-color: #1f6eb0;
+        }
+
+        .footer-links {
+            padding: 28px 0 48px;
+            background: #f4f6f9;
+            width: 100%;
+            border-top: 1px solid #dce3ec;
+        }
+
+        .footer-links .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px 20px;
+        }
+
+        .footer-links .col {
+            font-size: 0.9rem;
+            color: #385270;
+        }
+
+        .footer-links .col a {
+            margin: 0 3px;
+        }
+
+        .footer-links small {
+            color: #657d99;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #dce3ec;
+            margin: 30px 0 24px;
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero .sub {
+                font-size: 1.05rem;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-preview {
+                padding: 20px 18px;
+            }
+            .footer-links .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO 区：稳定入口 -->
+<section class="hero">
+    <div class="container">
+        <h1>易倍体育 · 持续的观看路径</h1>
+        <p class="sub">
+            在信息频繁变动的环境中，保持一个可靠、清晰的入口比以往更重要。  
+            我们始终将稳定放在首位，让每一次访问都自然流畅。
+        </p>
+        <div class="meta-line">
+            页面说明 · 聚合与直达，皆以简单为准
+        </div>
+    </div>
+</section>
+
+<!-- 浅色正文区：优势·说明·场景 -->
+<section class="content">
+    <div class="container">
+
+        <h2>为什么需要固定入口</h2>
+        <p>
+            不论是日常浏览还是临时查询，一个长期有效且指向明确的地址能节省大量时间。  
+            <a href="https://ssl-yibei.com">易倍体育</a> 作为内容聚合与信息展示的站点，一直保持域名的简洁与可访问性。  
+            不需要反复搜索，不需要在多个页面间跳转，打开即看到核心内容。
+        </p>
+        <p>
+            从页面设计的角度，我们把「稳定」拆解为两个层面：  
+            一是技术层面的连通性，保证大多数网络环境下都能顺利加载；  
+            二是内容层面的连贯性，让回访的用户不会感到陌生。
+        </p>
+
+        <h2>几点优势与细节</h2>
+        <div class="card-grid">
+            <div class="card-item">
+                <span class="num">01</span>
+                <h3>入口清晰</h3>
+                <p>独立域名，长期维护。无论是添加书签还是直接输入，都能快速到达。</p>
+            </div>
+            <div class="card-item">
+                <span class="num">02</span>
+                <h3>布局克制</h3>
+                <p>没有过度装饰，信息层级分明。正文、菜单、链接各归其位。</p>
+            </div>
+            <div class="card-item">
+                <span class="num">03</span>
+                <h3>响应与兼容</h3>
+                <p>适配常用屏幕尺寸，字体与间距在手机和桌面保持一致，减少阅读负担。</p>
+            </div>
+            <div class="card-item">
+                <span class="num">04</span>
+                <h3>更新可预期</h3>
+                <p>页面内容按需调整，不随意增减模块，老用户不会感到突兀。</p>
+            </div>
+        </div>
+
+        <h2>说明与适用场景</h2>
+        <p>
+            很多朋友习惯把常用链接放在收藏夹或笔记里，而最可靠的仍然是直接记住一个域名。  
+            <a href="https://ssl-yibei.com">易倍体育</a> 的页面结构经过规划，适合作为日常信息浏览的起点。  
+            无论是查看最新动态、回顾过往内容，还是通过站内索引寻找具体素材，都能在几步之内完成。
+        </p>
+        <p>
+            另外需要说明的是：页面中不包含自动播放、弹窗或强制性跳转，访问体验相对安静。  
+            如果你更喜欢直接了当的交互方式，这里应该不会让你失望。
+        </p>
+
+        <!-- FAQ 摘要 -->
+        <div class="faq-preview">
+            <h3>常见问题 · 摘要</h3>
+            <div class="faq-item">
+                <strong>页面会不会经常更换地址？</strong>
+                <p>目前不会。域名和结构在较长周期内保持稳定，如有必要会提前说明。</p>
+            </div>
+            <div class="faq-item">
+                <strong>移动端打开效果如何？</strong>
+                <p>采用响应式设计，在手机、平板和电脑上均可正常阅读，按钮和链接留有充足触控区域。</p>
+            </div>
+            <div class="faq-item">
+                <strong>是否有必要注册或登录？</strong>
+                <p>浏览页面内容不需要任何注册，直接打开即可。部分互动功能视后续规划而定。</p>
+            </div>
+        </div>
+
+        <p style="font-size: 0.95rem; color: #3e5772; margin-top: 24px;">
+            总结来说，<a href="https://ssl-yibei.com">易倍体育</a> 希望成为一个你不需要犹豫就能打开的页面。  
+            没有复杂的门槛，没有多余的干扰，只有经过整理的信息和稳定的连接。
+        </p>
+
+    </div>
+</section>
+
+<!-- 底部链接区 -->
+<section class="footer-links">
+    <div class="container">
+        <div class="col">
+            <a href="https://ssl-yibei.com">易倍体育</a> 
+            <span style="margin: 0 6px; color: #a0b8cf;">·</span>
+            <small>稳定入口 · 页面说明</small>
+        </div>
+        <div class="col">
+            <small>© 2025 · 简洁与可靠是唯一标准</small>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

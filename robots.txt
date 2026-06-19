@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fired065oriaa.github.io/ssl-yibei-com/sitemap.xml
